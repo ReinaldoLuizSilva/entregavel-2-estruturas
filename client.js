@@ -21,8 +21,6 @@ const req = http.request(options, (res) => {
   });
 
   res.on("end", () => {
-    console.log("\nTransmissão finalizada.");
-
     /* 10) Utilize o método getAt para mostrar o que existe nos índices 3 e 20 */
     console.log(`Elemento no índice 3: ${receivedData.getAt(3)}`);
     console.log(`Elemento no índice 20: ${receivedData.getAt(20)}`);
@@ -50,6 +48,8 @@ const req = http.request(options, (res) => {
 
     /* 16) Utilize o método toArray para mostrar a lista encadeada como um vetor */
     console.log(`Lista como array: [${receivedData.toArray().join(", ")}]`);
+
+    console.log("\nTransmissão finalizada.");
   });
 });
 
