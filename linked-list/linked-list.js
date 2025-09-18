@@ -65,16 +65,16 @@ export class LinkedList {
     if (index < 0 || index >= this.size) {
       return null;
     }
-    
+
     let currentNode = this.head;
     let currentIndex = 0;
-    
+
     // Percorre a lista até encontrar o índice desejado
     while (currentIndex < index) {
       currentNode = currentNode.next;
       currentIndex++;
     }
-    
+
     return currentNode.value;
   }
 
@@ -90,7 +90,7 @@ export class LinkedList {
     if (index < 0 || index >= this.size) {
       return null;
     }
-    
+
     // Caso especial: remover o primeiro elemento
     if (index === 0) {
       const value = this.head.value;
@@ -98,20 +98,20 @@ export class LinkedList {
       this.size--;
       return value;
     }
-    
+
     let currentNode = this.head;
     let currentIndex = 0;
-    
+
     // Percorre até o elemento anterior ao que será removido
     while (currentIndex < index - 1) {
       currentNode = currentNode.next;
       currentIndex++;
     }
-    
+
     const valueToRemove = currentNode.next.value;
     currentNode.next = currentNode.next.next;
     this.size--;
-    
+
     return valueToRemove;
   }
 
@@ -121,7 +121,7 @@ export class LinkedList {
   search(value) {
     let currentNode = this.head;
     let currentIndex = 0;
-    
+
     while (currentNode !== null) {
       if (currentNode.value === value) {
         return currentIndex;
@@ -129,7 +129,7 @@ export class LinkedList {
       currentNode = currentNode.next;
       currentIndex++;
     }
-    
+
     return -1; // Valor não encontrado
   }
 
@@ -140,7 +140,7 @@ export class LinkedList {
     let currentNode = this.head;
     let currentIndex = 0;
     let lastFoundIndex = -1;
-    
+
     while (currentNode !== null) {
       if (currentNode.value === value) {
         lastFoundIndex = currentIndex;
@@ -148,7 +148,7 @@ export class LinkedList {
       currentNode = currentNode.next;
       currentIndex++;
     }
-    
+
     return lastFoundIndex;
   }
 
@@ -157,12 +157,12 @@ export class LinkedList {
   toArray() {
     const array = [];
     let currentNode = this.head;
-    
+
     while (currentNode !== null) {
       array.push(currentNode.value);
       currentNode = currentNode.next;
     }
-    
+
     return array;
   }
 }
